@@ -58,7 +58,16 @@ module.exports = function(grunt) {
     mochaTest: {
       test: {
         options: {
-          reporter: 'spec'
+          reporter: 'spec',
+          require: 'coverage/blanket'
+        },
+        src: ['dojo_test.js']
+      },
+      coverage: {
+        options: {
+          reporter: 'html-cov',
+          quiet: true,
+          captureFile: 'coverage.html'
         },
         src: ['dojo_test.js']
       }
